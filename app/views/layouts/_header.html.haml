@@ -10,11 +10,7 @@
             %li#users_tab= link_to t('common.header_link.users'), users_path
           %li#profile_tab= link_to t('common.header_link.profile'), edit_user_registration_path
           %li#sign_out_tab= link_to t('common.header_link.sign_out'), destroy_user_session_path
-        - else
-          %li#sign_in_tab= link_to t('common.header_link.sign_in'), new_user_session_path
-          %li#sign_up_tab= link_to t('common.header_link.sign_up'), new_user_registration_path
-        - unless locale.eql? 'fr'
-          %li#french_tab= link_to t('common.header_link.french'), '/fr'
-        - unless locale.eql? 'en'
-          %li#english_tab= link_to t('common.header_link.english'), '/en'
+        //- else
+        //  %li#sign_in_tab= link_to t('common.header_link.sign_in'), new_user_session_path
+        //  %li#sign_up_tab= link_to t('common.header_link.sign_up'), new_user_registration_path
       

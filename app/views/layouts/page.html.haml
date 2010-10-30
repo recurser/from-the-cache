@@ -13,8 +13,12 @@
       #messages
         - flash.each do |key, value|
           .flash{:class => "#{key}"}= value
+      
+    = render 'layouts/header'
     
     .content
         
       = yield
+    
+      = render 'layouts/footer'
     

@@ -1,6 +1,6 @@
 en:
   common:
-    title_prefix:                     "Rails Kitchen Sink"
+    title_prefix:                     "Cache Proxy"
     title_separator:                  " | "
     or:                               "or"
     header_link:
@@ -35,6 +35,12 @@ en:
   pages:
     home:
       title:                          "Home"
+      creator_label:                  "by"
+      creator_link:                   "recursive design"
+      form_placeholder:               "enter a url..."
+      submit_label:                   "go."
+      about_link:                     "about"
+      contact_link:                   "contact"
     about:
       title:                          "About"
     

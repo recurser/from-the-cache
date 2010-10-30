@@ -5,6 +5,7 @@ class ContactsController < ApplicationController
   def new
     # id is used to deal with form
     @contact = Contact.new(:id => 1)
+    render :layout => 'page'
   end
   
   # Handles posting of the form, and mails a message to the site owner.
@@ -16,6 +17,7 @@ class ContactsController < ApplicationController
       flash[:alert] = t 'contacts.flash.invalid_form_warning'
       render 'new'
     end
+    render :layout => 'page'
   end
   
 end

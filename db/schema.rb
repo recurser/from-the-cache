@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(:version => 20101008034725) do
     t.integer "user_id"
   end
 
-  add_index "roles_users", ["user_id", "role_id"], :name => "index_roles_users_on_user_id_and_role_id", :unique => true
+  add_index "roles_users", ["user_id", "role_id"], :name => "index_roles_users_on_user_id_and_role_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                               :default => "", :null => false

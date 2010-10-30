@@ -4,4 +4,4 @@
 require File.expand_path('../config/application', __FILE__)
 require 'rake'
 
-RailsKitchenSink::Application.load_tasks
+CacheProxy::Application.load_tasks

@@ -31,15 +31,15 @@
 /* line 31, ../../../app/stylesheets/common/header.sass */
 #menu_container a {
   font-size: 1.1em;
-  color: #428edb;
+  color: #aa0101;
 }
 /* line 35, ../../../app/stylesheets/common/header.sass */
 #menu_container a:visited {
-  color: #428edb;
+  color: #aa0101;
 }
 /* line 38, ../../../app/stylesheets/common/header.sass */
 #menu_container a:hover {
-  color: #428edb;
+  color: #e0464b;
 }
 
 /* line 41, ../../../app/stylesheets/common/header.sass */

@@ -155,16 +155,16 @@ h1, h2, h3, h4 {
 /* line 18, ../../../app/stylesheets/common/base.sass */
 a {
   text-decoration: none;
-  color: #428edb;
+  color: #aa0101;
 }
 /* line 22, ../../../app/stylesheets/common/base.sass */
 a:visited {
-  color: #428edb;
+  color: #aa0101;
   text-decoration: none;
 }
 /* line 26, ../../../app/stylesheets/common/base.sass */
 a:hover {
-  color: #428edb;
+  color: #aa0101;
   text-decoration: underline;
 }
 

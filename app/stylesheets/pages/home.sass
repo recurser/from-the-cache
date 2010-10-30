@@ -3,66 +3,41 @@
 @import common/colors
 
 body#pages_home
-  
-  hr
-    margin: 2em 0
     
-  #intro_container
-    +grid(6, $ninesixty-columns)
-    +alpha
+  #search_container
+    +grid-move-base
+    +grid-push(2, $ninesixty-columns)
+    +grid(8, $ninesixty-columns)
+    margin: 100px 0
     
-    .box
+    #search_field
+      font-size: 36px
+      padding: 13px
+      width: 80%
     
-      h1
-        font-size: 2.4em
-        margin: 0
-        
-      p.slogan
-        color: $link
-        font-size: 1.4em
-        
-  #download_container
-    +grid(12, $ninesixty-columns)
-    text-align: center
-    
-    a#download_button
-      width: 195px
-      height: 57px
-      display: block
-      overflow: hidden
-      margin: 0 auto
-      text-indent: -9999px
-      background: transparent url('/images/download.png') top left no-repeat
-    
-  #feature_container
-    +grid(6, $ninesixty-columns)
-    +omega
-    
-    .feature
-      +grid(3, $ninesixty-columns)
+    #submit_button
+      background-color: $link
+      color: #fff
+      border: 0
+      font-size: 36px
+      padding: 15px
+      -webkit-border-radius: 5px
+      -moz-border-radius: 5px
+      border-radius: 5px
       
-      &#authentication,
-      &#authorization
-        +alpha
+      &:hover
+        background-color: $link_hover
+        cursor: pointer
       
-      &#user_management,
-      &#future_proof
-        +omega 
+      &:active
+        background-color: $link_active
+        cursor: pointer
         
-  #other_features_container
-    +grid(6, $ninesixty-columns) 
-    
-    .column
-      +grid(3, $ninesixty-columns) 
-      +alpha
-      +omega
+    p
+      color: $text_faded
+      font-size : 0.8em
       
-      li
-        list-style: disc
-        
-  #about_us_container
-    +grid(3, $ninesixty-columns) 
-    
-  #help_container
-    +grid(3, $ninesixty-columns) 
-    
+      a
+        color: $text_faded
+        text-decoration: underline
+        margin-right: 10px

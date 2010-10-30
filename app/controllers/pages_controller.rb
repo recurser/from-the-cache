@@ -8,7 +8,7 @@ class PagesController < ApplicationController
   
   # About-this-project page.
   def about
-    
+    render :layout => 'page'
   end
 
 end
