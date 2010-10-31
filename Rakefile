@@ -4,4 +4,4 @@
 require File.expand_path('../config/application', __FILE__)
 require 'rake'
 
-CacheProxy::Application.load_tasks
+FromTheCache::Application.load_tasks

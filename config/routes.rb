@@ -1,4 +1,4 @@
-CacheProxy::Application.routes.draw do
+FromTheCache::Application.routes.draw do
 
     resources :contacts, :only => [:new, :create]
     resources  :users
