@@ -9,6 +9,12 @@ class Search
   # To deal with the form, you must have an id attribute.
   attr_accessor :id, :url
   
+  # Over-ride the URL setter - rails seems to convert double-forward-slashes to single
+  # when we send the URL without the '?url=' prefix.
+  def url=(_url)
+    @url = _url.sub(/(^https?:\/)([^\/])/, '\1/\2')
+  end
+  
   # Process the URL, and try to get the result from the cache.
   def result
     require 'hpricot'
@@ -23,8 +29,11 @@ class Search
     # Extract the domain.
     domain = URI.parse(@url).host
     
+    # URL-encode the url
+    escaped_url = CGI::escape(@url)
+    
     # Get the page from google cache.
-    cache_url = "http://webcache.googleusercontent.com/search?q=cache:#{@url}"
+    cache_url = "http://webcache.googleusercontent.com/search?q=cache:#{escaped_url}"
     content = Hpricot(open(cache_url,
       "User-Agent" => "fromthecache.com crawler",
       "From"       => "mail@fromthecache.com")

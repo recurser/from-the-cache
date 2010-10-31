@@ -3,6 +3,15 @@ class PagesController < ApplicationController
   
   # Search page.
   def search      
+    # If no URL has been set, grab the whole request URI, remove 
+    # the leading forward-slash, and treat it as the URL.
+    unless params[:url]
+      url = request.request_uri.sub(/^\//, '')
+      if url != ''
+        params[:url] = url
+      end
+    end
+    
     if params[:url]
       @search     = Search.new
       @search.url = params[:url]
@@ -15,7 +24,7 @@ class PagesController < ApplicationController
     end   
   end
   
-  # About-this-project page.
+  # About-this-site page.
   def about
     render :layout => 'page'
   end

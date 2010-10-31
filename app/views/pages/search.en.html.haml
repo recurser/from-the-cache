@@ -1,6 +1,6 @@
 
 #search_container
-  %form{:method => 'get'}
+  %form{:method => 'get', :id => 'search_form'}
     = text_field :search, :url, :placeholder => t('pages.search.form_placeholder'), :id => 'search_field', :name => 'url'
     %input{:type => 'submit', :value => t('pages.search.submit_label'), :id => 'submit_button'}
   

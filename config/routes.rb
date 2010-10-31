@@ -14,6 +14,6 @@ FromTheCache::Application.routes.draw do
     match '/javascripts/bundle/:bundle.js', :to => 'bistro_car/bundle#show'
     
     # Send any unknown controller/actions to the search page.
-    match '*url',     :to => 'pages#search'
+    match '*dummy',     :to => 'pages#search'
   
 end
