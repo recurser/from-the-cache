@@ -33,14 +33,15 @@ en:
       
     
   pages:
-    home:
+    search:
       title:                          "Home"
-      creator_label:                  "by"
-      creator_link:                   "recursive design"
       form_placeholder:               "enter a url..."
       submit_label:                   "go."
+      creator_label:                  "by"
+      creator_link:                   "recursive design"
       about_link:                     "about"
       contact_link:                   "contact"
+      invalid_url_warning:            "Please enter a valid url"
     about:
       title:                          "About"
     

@@ -7,16 +7,16 @@
   background-color: white;
   border-bottom: 1px solid #dfdfdf;
   color: #222222;
-  line-height: 2em;
-  font-size: 1.4em;
+  padding: 15px 0;
+  font-size: 36px;
   text-align: center;
   width: 100%;
 }
 /* line 17, ../../../app/stylesheets/common/flash.sass */
 #messages .flash.alert {
-  background-color: #ffcccc;
-  border-bottom: 1px solid #993333;
-  color: #993333;
+  background-color: #aa0101;
+  border-bottom: 1px solid #aa0101;
+  color: white;
 }
 /* line 22, ../../../app/stylesheets/common/flash.sass */
 #messages .flash.notice {

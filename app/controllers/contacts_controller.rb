@@ -15,9 +15,8 @@ class ContactsController < ApplicationController
       redirect_to(root_path, :notice => t('contacts.flash.message_sent'))
     else
       flash[:alert] = t 'contacts.flash.invalid_form_warning'
-      render 'new'
+      render 'new', :layout => 'page'
     end
-    render :layout => 'page'
   end
   
 end

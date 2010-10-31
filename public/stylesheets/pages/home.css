@@ -9,14 +9,14 @@ body#pages_home #search_container {
   width: 620px;
   margin: 100px 0;
 }
-/* line 13, ../../../app/stylesheets/pages/home.sass */
-body#pages_home #search_container #search_field {
+/* line 15, ../../../app/stylesheets/pages/home.sass */
+body#pages_home #search_container form #search_field {
   font-size: 36px;
   padding: 13px;
   width: 80%;
 }
-/* line 18, ../../../app/stylesheets/pages/home.sass */
-body#pages_home #search_container #submit_button {
+/* line 20, ../../../app/stylesheets/pages/home.sass */
+body#pages_home #search_container form #submit_button {
   background-color: #aa0101;
   color: white;
   border: 0;
@@ -26,22 +26,30 @@ body#pages_home #search_container #submit_button {
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 28, ../../../app/stylesheets/pages/home.sass */
-body#pages_home #search_container #submit_button:hover {
+/* line 30, ../../../app/stylesheets/pages/home.sass */
+body#pages_home #search_container form #submit_button:hover {
   background-color: #e0464b;
   cursor: pointer;
 }
-/* line 32, ../../../app/stylesheets/pages/home.sass */
-body#pages_home #search_container #submit_button:active {
+/* line 34, ../../../app/stylesheets/pages/home.sass */
+body#pages_home #search_container form #submit_button:active {
   background-color: #aa0101;
   cursor: pointer;
 }
-/* line 36, ../../../app/stylesheets/pages/home.sass */
+/* line 38, ../../../app/stylesheets/pages/home.sass */
+body#pages_home #search_container form div.field_with_errors {
+  display: inline;
+}
+/* line 41, ../../../app/stylesheets/pages/home.sass */
+body#pages_home #search_container form div.field_with_errors #search_field {
+  border: 2px solid #aa0101;
+}
+/* line 44, ../../../app/stylesheets/pages/home.sass */
 body#pages_home #search_container p {
   color: #999999;
   font-size: 0.8em;
 }
-/* line 40, ../../../app/stylesheets/pages/home.sass */
+/* line 48, ../../../app/stylesheets/pages/home.sass */
 body#pages_home #search_container p a {
   color: #999999;
   text-decoration: underline;

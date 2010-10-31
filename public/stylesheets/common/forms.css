@@ -20,9 +20,9 @@
   padding: 0 0.5em;
   margin: 0 0 0 0.5em;
   font-size: 0.9em;
-  background-color: #ffcccc;
-  color: #993333;
-  border: 1px solid #993333;
+  background-color: #aa0101;
+  color: white;
+  border: 1px solid #aa0101;
 }
 /* line 25, ../../../app/stylesheets/common/forms.sass */
 .form .formtastic fieldset ol li p.inline-hints,
@@ -48,9 +48,9 @@
 }
 /* line 41, ../../../app/stylesheets/common/forms.sass */
 .form #error_explanation {
-  background-color: #ffcccc;
-  color: #993333;
-  border: 1px solid #993333;
+  background-color: #aa0101;
+  color: white;
+  border: 1px solid #aa0101;
   padding: 0.5em;
   margin: 0 auto 1em auto;
 }
