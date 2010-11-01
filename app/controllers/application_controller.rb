@@ -28,4 +28,16 @@ class ApplicationController < ActionController::Base
      @title = "#{controller_name}.#{action_name}.title"
   end
   
+  # Returns the current domain (and port if present).
+  def get_domain
+    result = request.host
+    port   = request.port
+    
+    if port != 80
+      result = result + ':' + port.to_s
+    end
+    
+    result
+  end
+  
 end

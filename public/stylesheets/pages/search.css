@@ -13,9 +13,10 @@ body#pages_search #search_container {
 body#pages_search #search_container form #search_field {
   font-size: 36px;
   padding: 13px;
-  width: 80%;
+  width: 75%;
+  margin-right: 5px;
 }
-/* line 20, ../../../app/stylesheets/pages/search.sass */
+/* line 21, ../../../app/stylesheets/pages/search.sass */
 body#pages_search #search_container form #submit_button {
   background-color: #aa0101;
   color: white;
@@ -26,30 +27,30 @@ body#pages_search #search_container form #submit_button {
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 30, ../../../app/stylesheets/pages/search.sass */
+/* line 31, ../../../app/stylesheets/pages/search.sass */
 body#pages_search #search_container form #submit_button:hover {
   background-color: #e0464b;
   cursor: pointer;
 }
-/* line 34, ../../../app/stylesheets/pages/search.sass */
+/* line 35, ../../../app/stylesheets/pages/search.sass */
 body#pages_search #search_container form #submit_button:active {
   background-color: #aa0101;
   cursor: pointer;
 }
-/* line 38, ../../../app/stylesheets/pages/search.sass */
+/* line 39, ../../../app/stylesheets/pages/search.sass */
 body#pages_search #search_container form div.field_with_errors {
   display: inline;
 }
-/* line 41, ../../../app/stylesheets/pages/search.sass */
+/* line 42, ../../../app/stylesheets/pages/search.sass */
 body#pages_search #search_container form div.field_with_errors #search_field {
   border: 2px solid #aa0101;
 }
-/* line 44, ../../../app/stylesheets/pages/search.sass */
+/* line 45, ../../../app/stylesheets/pages/search.sass */
 body#pages_search #search_container p {
   color: #999999;
   font-size: 0.8em;
 }
-/* line 48, ../../../app/stylesheets/pages/search.sass */
+/* line 49, ../../../app/stylesheets/pages/search.sass */
 body#pages_search #search_container p a {
   color: #999999;
   text-decoration: underline;

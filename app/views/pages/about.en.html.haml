@@ -1,130 +1,33 @@
 
 #what_for_container
   %h1 
-    So what's it for?
-  %p
-    I needed a solid base to build my own rails projects from. Since integrating all
-    these disparate pieces isn't the easiest thing in the world, I decided to release
-    this sample site in the hope that it would save you some time as well.
+    What is this anyway?
     
-#plans_container
-  %h1 
-    Plans for the future
   %p
-    I'm considering adding support for 
-    %a{:href => 'http://chargify.com/'} one 
-    %a{:href => 'http://recurly.com/'} or 
-    %a{:href => 'https://cheddargetter.com/'} more 
-    subscription payment services, as well as 
-    %a{:href => 'http://github.com/thoughtbot/paperclip'} Paperclip 
-    upload support. If there's any common use-cases that you'd like
-    to see included, please
-    %a{:href => 'http://recursive-design.com/contact/'} drop me a line
-    and let me know!
-     
-.clear
-
-%hr
-
-.item
-  %h2 
-    HAML templates
-  %p
-    Haml takes your gross, ugly templates and replaces them with veritable Haiku.
-  %p  
-    Haml is based on one primary principle. Markup should be beautiful.
-    %a{:href => 'http://haml-lang.com/', :class => 'read_more'} Read more...
-
-.item
-  %h2 
-    CoffeeScript support
-  %p
-    CoffeeScript is a little language that compiles into JavaScript. Think of it as 
-    JavaScript's less ostentatious kid brother — the same genes, roughly the same 
-    height, but a different sense of style.
-    %a{:href => 'http://jashkenas.github.com/coffee-script/', :class => 'read_more'} Read more...
-
-.clear
-
-.item
-  %h2 
-    Metrics by metric_fu
-  %p
-    Metric_fu is a set of rake tasks that make it easy to generate metrics reports. It 
-    uses Saikuro, Flog, Flay, Rcov, Reek, Roodi, Churn, RailsBestPractices, Subversion, 
-    Git, and Rails built-in stats task to create a series of reports.
-    %a{:href => 'http://metric-fu.rubyforge.org/', :class => 'read_more'} Read more...
-
-.item
-  %h2 
-    Full RSpec test suite
-  %p
-    RSpec is a behavior driven development (BDD) framework for the Ruby programming language, 
-    inspired by JBehave. It contains its own mocking framework that is fully integrated into 
-    the framework based upon JMock.
-    %a{:href => 'http://rspec.info/', :class => 'read_more'} Read more...
-
-.clear
-
-.item
-  %h2 
-    960 CSS grid system
-  %p
-    The 960 Grid System is an effort to streamline web development workflow by providing commonly 
-    used dimensions, based on a width of 960 pixels.
-    %a{:href => 'http://960.gs/', :class => 'read_more'} Read more...
-
-.item
-  %h2 
-    Jammit asset packaging
-  %p
-    Jammit is an industrial strength asset packaging library for Rails, providing both the
-    CSS and JavaScript concatenation and compression that you'd expect, as well as YUI 
-    Compressor and Closure Compiler compatibility.
-    %a{:href => 'http://documentcloud.github.com/jammit/', :class => 'read_more'} Read more...
+    I've been writing scraping some sites recently for a side-project involving word-frequencies,
+    and <b>found myself getting blocked</b> by the site (I was obeying <em>robots.txt</em> and throttling
+    my requests pretty heavily).
     
-.clear
-
-.item
-  %h2 
-    Heroku-ready
   %p
-    Heroku is an online Rack and Ruby on Rails cloud Platform-as-a-Service. It was one of the first 
-    cloud platform providers and the company reports over 82,000 applications running on its service.
-    %a{:href => 'http://heroku.com/', :class => 'read_more'} Read more...
-
-.item
-  %h2 
-    Formtastic forms
+    It occurred to me that I could save the target site bandwidth, and probably speed up the scrape
+    process, if I <b>checked the google cache first</b>, and only scraped the site itself as a last resort.
+    
   %p
-    Formtastic is a Rails FormBuilder DSL (with some other goodies) to make it far easier to 
-    create beautiful, semantically rich, syntactically awesome, readily stylable and 
-    wonderfully accessible HTML forms in your Rails applications.
-    %a{:href => 'http://github.com/justinfrench/formtastic', :class => 'read_more'} Read more...
-
-.clear
-
-.item
-  %h2 
-    Devise
+    Thus was <a href="http://fromthecache.com/">fromthecache.com</a> born. When you enter a URL,
+    it will return the cached version from google if available, or otherwise it will scrape the original 
+    site.
+    
   %p
-    Devise is a flexible authentication solution for Rails based on Warden. It:
-    %ul
-      %li 
-        Is Rack based;
-      %li 
-        Is a complete MVC solution based on Rails engines;
-      %li 
-        Allows you to have multiple roles (or models/scopes) signed in at the same time;
-      %li 
-        Is based on a modularity concept: use just what you really need.
-    %a{:href => 'http://github.com/plataformatec/devise', :class => 'read_more'} Read more...
-
-.item
-  %h2 
-    CanCan
+    Another use is an easy way to post mirror links when a site goes down - simply put <em>fromthecache.com/</em>
+    in front of the URL and you have an instant cache link.
+    
   %p
-    CanCan is an authorization library for Ruby on Rails which restricts what resources a given user is allowed to access. All permissions are defined in a single location (the Ability class) and not duplicated across controllers, views, and database queries.
-    %a{:href => 'http://github.com/ryanb/cancan', :class => 'read_more'} Read more...
+    I'm not sure about the legalities of removing the google cache header text (i do link to the google cache 
+    result though), and I have a suspicion the site may end up blocked from google anyway for looking
+    like a bot, but in the meantime <b>we're rock'n'rolling!</b>
+    
+  %p
+    Feel free to call the service programmatically if you wish, and basically do whatever you want with it.
+    If anyone has complaints or comments, please <a href="/contact">drop me a line</a>.
 
 .clear

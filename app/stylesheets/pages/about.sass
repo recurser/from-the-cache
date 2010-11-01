@@ -5,25 +5,7 @@
 body#pages_about
 
   #what_for_container
+    +grid-move-base
+    +grid-push(3, $ninesixty-columns)
     +grid(6, $ninesixty-columns)
-  
-  #plans_container
-    +grid(6, $ninesixty-columns)
-    
-  .item
-    +grid(6, $ninesixty-columns)
-    
-    p
-      font-style: italic
-      
-    ul
-      margin: 0
-     
-      li
-      font-style: italic
-    
-    a.read_more
-      display: block
-      margin-bottom: 0.5em
-      font-style: normal
     

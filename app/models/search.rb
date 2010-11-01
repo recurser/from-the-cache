@@ -4,7 +4,7 @@ class Search
   include ActiveModel::Validations
   
   validates_presence_of :url
-  validates_format_of   :url, :with => /(^$)|(^((http|https):\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$)/ix
+  validates_format_of   :url, :with => /(^$)|(^((http|https):\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?[\/\?\#].*)?$)/ix
   
   # To deal with the form, you must have an id attribute.
   attr_accessor :id, :url
@@ -20,42 +20,81 @@ class Search
     require 'hpricot'
     require 'open-uri'
     
-    # Prepend HTTP if it's not there already.
-    # TODO
+    processed_url = @url
     
-    # Extract the method (http/https).
-    # TODO
+    # Prepend HTTP if it's not there already.
+    unless processed_url =~ /^http:\/\//
+      processed_url = 'http://' + processed_url
+    end
     
     # Extract the domain.
-    domain = URI.parse(@url).host
+    domain = URI.parse(processed_url).host
     
     # URL-encode the url
-    escaped_url = CGI::escape(@url)
+    escaped_url = CGI::escape(processed_url)
+    
+    # Use <base href="http://recursive-design.com/"> ala google
+    base_href = "<base href='#{processed_url}'>"
     
     # Get the page from google cache.
     cache_url = "http://webcache.googleusercontent.com/search?q=cache:#{escaped_url}"
-    content = Hpricot(open(cache_url,
-      "User-Agent" => "fromthecache.com crawler",
-      "From"       => "mail@fromthecache.com")
-    )
-    
-    # Check for success.
-    # TODO
-    success = true
+    content = scrape_url(cache_url)
     
     # If success, remove the google cache header.
-    if success
-      content = content/"body"
+    if content
+      content = content/"html"
+      source  = CGI::escape(cache_url)
+      (content).prepend(base_href)
     end
     
-    # Use <base href="http://recursive-design.com/"> ala google?
-    # Add a hidden field at the end of the page containing the original url path.
-    # TODO
+    # If the google cache call failed, try to get the original URL.
+    unless content
+      content = scrape_url(processed_url)
+      source  = escaped_url
+      (content/"html").prepend(base_href)
+    end
+    
+    # Return false if we still couldn't retrieve anything.
+    unless content
+      return false
+    end
     
     # Add custom javascript to rewrite relative links, CSS, JScript, images etc.
-    # TODO
+    if Rails.env.development?
+      script_tag  = '<script src="http://localhost:3000/javascripts/jquery.js"></script>'
+      script_tag += '<script src="http://localhost:3000/javascripts/application.js"></script>'
+    else
+      script_tag = '<script src="http://fromthecache.com/assets/common.js"></script>'
+    end
+    (content/"body").append(script_tag)
+    
+    # Add a hidden field so we know the source of the page.
+    hidden_tag = "<input type='hidden' id='scrape_source' value='#{source}'>"
+    (content/"body").append(hidden_tag)
     
     content
+  end
+  
+  private
+  
+  # Scrape the given URL and return the content.
+  def scrape_url(url)
+    Rails.logger.debug "Fetching #{url}"
+    content = Hpricot(open(url,
+      "User-Agent" => "fromthecache.com scraper",
+      "From"       => "mail@fromthecache.com")
+    )
+    content
+    
+    # Check if we've hit the google cache 404 page.
+    if content.inner_text =~ / - did not match any documents\./
+      content = nil
+    end
+    
+    content
+  rescue
+    Rails.logger.info "Couldn't load URL #{url}"
+    nil
   end
   
 end
