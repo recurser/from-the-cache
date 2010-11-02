@@ -61,7 +61,7 @@ class Search
     unless result
       result = scrape_url(processed_url)
       source  = escaped_url
-      if result[:content]
+      if result
         (result[:content]/"html").prepend(base_href)
       end
     end
@@ -132,3 +132,11 @@ class Search
   
 end
 
+
+# Monkey-patch OpenURI to allow http->https redirection.
+module OpenURI
+  def OpenURI.redirectable?(uri1, uri2)
+    uri1.scheme.downcase == uri2.scheme.downcase ||
+    (/\A(?:https?|ftp)\z/i =~ uri1.scheme && /\A(?:https?|ftp)\z/i =~ uri2.scheme)
+  end
+end
