@@ -9,16 +9,6 @@
   margin-bottom: 2em
   height: 3em
   +grid-container
-  
-  li
-    float: left
-    margin: 0 0.5em
-    line-height: 3em
-    list-style: none
-    
-    &#english_tab,
-    &#french_tab
-      float: right
     
   ul
     width: 100%
@@ -30,6 +20,16 @@
     +grid(6, $ninesixty-columns)  
     border-bottom: 1px dashed $header_border
     background-color: $header_bg
+  
+  li
+    float: left
+    margin: 0 0.5em
+    line-height: 3em
+    list-style: none
+    
+    &#english_tab,
+    &#french_tab
+      float: right
     
   a
     font-size: 1.1em
@@ -41,12 +41,12 @@
     &:hover
       color: $header_link_hover
       
-body#pages_home         header li#home_tab a,
-body#pages_about        header li#about_tab a,
-body#contacts_new       header li#contact_tab a,
-body#users_index        header li#users_tab a,
-body#registrations_edit header li#profile_tab a,
-body#sessions_new       header li#sign_in_tab a,
-body#registrations_new  header li#sign_up_tab a
+body#pages_home         #menu_container  li#home_tab a,
+body#pages_about        #menu_container  li#about_tab a,
+body#contacts_new       #menu_container  li#contact_tab a,
+body#users_index        #menu_container  li#users_tab a,
+body#registrations_edit #menu_container  li#profile_tab a,
+body#sessions_new       #menu_container  li#sign_in_tab a,
+body#registrations_new  #menu_container  li#sign_up_tab a
   color: $text
   

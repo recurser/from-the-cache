@@ -9,17 +9,6 @@
   width: 960px;
 }
 /* line 13, ../../../app/stylesheets/common/header.sass */
-#menu_container li {
-  float: left;
-  margin: 0 0.5em;
-  line-height: 3em;
-  list-style: none;
-}
-/* line 19, ../../../app/stylesheets/common/header.sass */
-#menu_container li#english_tab, #menu_container li#french_tab {
-  float: right;
-}
-/* line 23, ../../../app/stylesheets/common/header.sass */
 #menu_container ul {
   width: 100%;
   overflow: hidden;
@@ -34,6 +23,17 @@
   width: 460px;
   border-bottom: 1px dashed #dfdfdf;
   background-color: white;
+}
+/* line 24, ../../../app/stylesheets/common/header.sass */
+#menu_container li {
+  float: left;
+  margin: 0 0.5em;
+  line-height: 3em;
+  list-style: none;
+}
+/* line 30, ../../../app/stylesheets/common/header.sass */
+#menu_container li#english_tab, #menu_container li#french_tab {
+  float: right;
 }
 /* line 34, ../../../app/stylesheets/common/header.sass */
 #menu_container a {
@@ -50,12 +50,12 @@
 }
 
 /* line 44, ../../../app/stylesheets/common/header.sass */
-body#pages_home header li#home_tab a,
-body#pages_about header li#about_tab a,
-body#contacts_new header li#contact_tab a,
-body#users_index header li#users_tab a,
-body#registrations_edit header li#profile_tab a,
-body#sessions_new header li#sign_in_tab a,
-body#registrations_new header li#sign_up_tab a {
+body#pages_home #menu_container li#home_tab a,
+body#pages_about #menu_container li#about_tab a,
+body#contacts_new #menu_container li#contact_tab a,
+body#users_index #menu_container li#users_tab a,
+body#registrations_edit #menu_container li#profile_tab a,
+body#sessions_new #menu_container li#sign_in_tab a,
+body#registrations_new #menu_container li#sign_up_tab a {
   color: #222222;
 }

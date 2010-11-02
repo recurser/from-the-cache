@@ -1,71 +1,30 @@
-/*
-Syntax error: Undefined mixin 'grid-move-base'.
-        on line 10 of /Users/dave/Documents/Code/from-the-cache/app/stylesheets/common/footer.sass, in `grid-move-base'
-        from line 10 of /Users/dave/Documents/Code/from-the-cache/app/stylesheets/common/footer.sass
-
-Backtrace:
-/Users/dave/Documents/Code/from-the-cache/app/stylesheets/common/footer.sass:10:in `grid-move-base'
-/Users/dave/Documents/Code/from-the-cache/app/stylesheets/common/footer.sass:10
-/usr/local/Cellar/gems/1.8/gems/haml-3.0.21/lib/sass/tree/mixin_node.rb:74:in `perform!'
-/usr/local/Cellar/gems/1.8/gems/haml-3.0.21/lib/sass/tree/node.rb:305:in `_perform'
-/usr/local/Cellar/gems/1.8/gems/haml-3.0.21/lib/sass/tree/node.rb:213:in `perform'
-/usr/local/Cellar/gems/1.8/gems/haml-3.0.21/lib/sass/tree/node.rb:326:in `perform_children'
-/usr/local/Cellar/gems/1.8/gems/haml-3.0.21/lib/sass/tree/node.rb:326:in `map'
-/usr/local/Cellar/gems/1.8/gems/haml-3.0.21/lib/sass/tree/node.rb:326:in `perform_children'
-/usr/local/Cellar/gems/1.8/gems/haml-3.0.21/lib/sass/tree/node.rb:317:in `perform!'
-/usr/local/Cellar/gems/1.8/gems/haml-3.0.21/lib/sass/tree/rule_node.rb:191:in `perform!'
-/usr/local/Cellar/gems/1.8/gems/haml-3.0.21/lib/sass/tree/node.rb:305:in `_perform'
-/usr/local/Cellar/gems/1.8/gems/haml-3.0.21/lib/sass/tree/node.rb:213:in `perform'
-/usr/local/Cellar/gems/1.8/gems/haml-3.0.21/lib/sass/tree/node.rb:326:in `perform_children'
-/usr/local/Cellar/gems/1.8/gems/haml-3.0.21/lib/sass/tree/node.rb:326:in `map'
-/usr/local/Cellar/gems/1.8/gems/haml-3.0.21/lib/sass/tree/node.rb:326:in `perform_children'
-/usr/local/Cellar/gems/1.8/gems/haml-3.0.21/lib/sass/tree/node.rb:317:in `perform!'
-/usr/local/Cellar/gems/1.8/gems/haml-3.0.21/lib/sass/tree/root_node.rb:59:in `perform!'
-/usr/local/Cellar/gems/1.8/gems/haml-3.0.21/lib/sass/tree/node.rb:305:in `_perform'
-/usr/local/Cellar/gems/1.8/gems/haml-3.0.21/lib/sass/tree/node.rb:213:in `perform'
-/usr/local/Cellar/gems/1.8/gems/haml-3.0.21/lib/sass/tree/root_node.rb:37:in `perform'
-/usr/local/Cellar/gems/1.8/gems/haml-3.0.21/lib/sass/tree/root_node.rb:29:in `render'
-/usr/local/Cellar/gems/1.8/gems/haml-3.0.21/lib/sass/engine.rb:196:in `_render'
-/usr/local/Cellar/gems/1.8/gems/haml-3.0.21/lib/sass/engine.rb:168:in `render'
-/usr/local/Cellar/gems/1.8/gems/haml-3.0.21/lib/haml/util.rb:289:in `silence_haml_warnings'
-/usr/local/Cellar/gems/1.8/gems/haml-3.0.21/lib/sass/engine.rb:168:in `render'
-/usr/local/Cellar/gems/1.8/gems/compass-0.10.5/lib/compass/compiler.rb:103:in `compile'
-/usr/local/Cellar/gems/1.8/gems/compass-0.10.5/lib/compass/logger.rb:43:in `red'
-/usr/local/Cellar/gems/1.8/gems/compass-0.10.5/lib/compass/compiler.rb:102:in `compile'
-/usr/local/Cellar/gems/1.8/gems/compass-0.10.5/lib/compass/compiler.rb:93:in `compile_if_required'
-/usr/local/Cellar/gems/1.8/gems/compass-0.10.5/lib/compass/compiler.rb:84:in `run'
-/usr/local/Cellar/gems/1.8/gems/compass-0.10.5/lib/compass/compiler.rb:82:in `each'
-/usr/local/Cellar/gems/1.8/gems/compass-0.10.5/lib/compass/compiler.rb:82:in `run'
-/usr/local/Cellar/gems/1.8/gems/compass-0.10.5/lib/compass/commands/watch_project.rb:92:in `recompile'
-/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `to_proc'
-/usr/local/Cellar/gems/1.8/gems/haml-3.0.21/vendor/fssm/lib/fssm/path.rb:71:in `call'
-/usr/local/Cellar/gems/1.8/gems/haml-3.0.21/vendor/fssm/lib/fssm/path.rb:71:in `run_callback'
-/usr/local/Cellar/gems/1.8/gems/haml-3.0.21/vendor/fssm/lib/fssm/path.rb:54:in `callback_action'
-/usr/local/Cellar/gems/1.8/gems/haml-3.0.21/vendor/fssm/lib/fssm/path.rb:34:in `update'
-/usr/local/Cellar/gems/1.8/gems/haml-3.0.21/vendor/fssm/lib/fssm/state/directory.rb:32:in `modified'
-/usr/local/Cellar/gems/1.8/gems/haml-3.0.21/vendor/fssm/lib/fssm/state/directory.rb:31:in `each'
-/usr/local/Cellar/gems/1.8/gems/haml-3.0.21/vendor/fssm/lib/fssm/state/directory.rb:31:in `modified'
-/usr/local/Cellar/gems/1.8/gems/haml-3.0.21/vendor/fssm/lib/fssm/state/directory.rb:16:in `refresh'
-/usr/local/Cellar/gems/1.8/gems/haml-3.0.21/vendor/fssm/lib/fssm/backends/fsevents.rb:15:in `add_handler'
-/usr/local/Cellar/gems/1.8/gems/haml-3.0.21/vendor/fssm/lib/fssm/backends/fsevents.rb:14:in `each'
-/usr/local/Cellar/gems/1.8/gems/haml-3.0.21/vendor/fssm/lib/fssm/backends/fsevents.rb:14:in `add_handler'
-/usr/local/Cellar/gems/1.8/gems/haml-3.0.21/vendor/fssm/lib/fssm/backends/rubycocoa/fsevents.rb:107:in `call'
-/usr/local/Cellar/gems/1.8/gems/haml-3.0.21/vendor/fssm/lib/fssm/backends/rubycocoa/fsevents.rb:107:in `initialize'
-/usr/local/Cellar/gems/1.8/gems/haml-3.0.21/vendor/fssm/lib/fssm/backends/fsevents.rb:27:in `call'
-/usr/local/Cellar/gems/1.8/gems/haml-3.0.21/vendor/fssm/lib/fssm/backends/fsevents.rb:27:in `CFRunLoopRun'
-/usr/local/Cellar/gems/1.8/gems/haml-3.0.21/vendor/fssm/lib/fssm/backends/fsevents.rb:27:in `run'
-/usr/local/Cellar/gems/1.8/gems/haml-3.0.21/vendor/fssm/lib/fssm/monitor.rb:24:in `run'
-/usr/local/Cellar/gems/1.8/gems/haml-3.0.21/vendor/fssm/lib/fssm.rb:17:in `monitor'
-/usr/local/Cellar/gems/1.8/gems/compass-0.10.5/lib/compass/commands/watch_project.rb:61:in `perform'
-/usr/local/Cellar/gems/1.8/gems/compass-0.10.5/lib/compass/commands/base.rb:18:in `execute'
-/usr/local/Cellar/gems/1.8/gems/compass-0.10.5/lib/compass/commands/project_base.rb:19:in `execute'
-/usr/local/Cellar/gems/1.8/gems/compass-0.10.5/lib/compass/exec/sub_command_ui.rb:38:in `perform!'
-/usr/local/Cellar/gems/1.8/gems/compass-0.10.5/lib/compass/exec/sub_command_ui.rb:15:in `run!'
-/usr/local/Cellar/gems/1.8/gems/compass-0.10.5/bin/compass:26
-/usr/local/bin/compass:19:in `load'
-/usr/local/bin/compass:19
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Syntax error: Undefined mixin 'grid-move-base'.\A         on line 10 of /Users/dave/Documents/Code/from-the-cache/app/stylesheets/common/footer.sass, in `grid-move-base'\A         from line 10 of /Users/dave/Documents/Code/from-the-cache/app/stylesheets/common/footer.sass"; }
+/* line 6, ../../../app/stylesheets/common/footer.sass */
+#footer_container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 960px;
+  height: auto;
+  color: #222222;
+  margin-top: 20px;
+}
+/* line 12, ../../../app/stylesheets/common/footer.sass */
+#footer_container ul {
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  left: 240px;
+  display: inline;
+  float: left;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 460px;
+  border-top: 1px dashed #dedede;
+  background-color: white;
+}
+/* line 23, ../../../app/stylesheets/common/footer.sass */
+#footer_container li {
+  float: left;
+  margin: 0.5em;
+}

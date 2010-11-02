@@ -1,23 +1,26 @@
 
+@import 960/grid
 @import colors
 
-footer 
-  border-top: 1px dashed $footer_border
-  background-color: $footer_bg
+
+#footer_container 
+  +grid-container
   height: auto
   color: $footer_text
   margin-top: 20px
-  +grid-move-base
-  +grid-push(3, $ninesixty-columns)
-  +grid(6, $ninesixty-columns)  
-  
-  li
-    float: left
-    margin: 0.5em
     
   ul
     width: 100%
     overflow: hidden
     margin: 0
     padding: 0
+    +grid-move-base
+    +grid-push(3, $ninesixty-columns)
+    +grid(6, $ninesixty-columns)  
+    border-top: 1px dashed $footer_border
+    background-color: $footer_bg
+
+  li
+    float: left
+    margin: 0.5em
   
