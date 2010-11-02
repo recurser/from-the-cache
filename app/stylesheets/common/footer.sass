@@ -2,11 +2,14 @@
 @import colors
 
 footer 
-  border-top: 1px solid $footer_border
+  border-top: 1px dashed $footer_border
   background-color: $footer_bg
   height: auto
   color: $footer_text
   margin-top: 20px
+  +grid-move-base
+  +grid-push(3, $ninesixty-columns)
+  +grid(6, $ninesixty-columns)  
   
   li
     float: left

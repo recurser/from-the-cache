@@ -4,12 +4,11 @@
 
 // IE won't select on <header> or <nav> - need to add a <div> container as well unfortunately.
 #menu_container 
-  border-bottom: 1px solid $header_border
-  background-color: $header_bg
   height: auto
   color: $header_text
   margin-bottom: 2em
   height: 3em
+  +grid-container
   
   li
     float: left
@@ -26,7 +25,11 @@
     overflow: hidden
     margin: 0
     padding: 0
-    +grid-container
+    +grid-move-base
+    +grid-push(3, $ninesixty-columns)
+    +grid(6, $ninesixty-columns)  
+    border-bottom: 1px dashed $header_border
+    background-color: $header_bg
     
   a
     font-size: 1.1em
