@@ -544,6 +544,11 @@ hr {
   width: 90%;
 }
 
+/* line 71, ../../app/stylesheets/common/base.sass */
+.placeholder {
+  color: #a9a9b3;
+}
+
 /* line 5, ../../app/stylesheets/common/flash.sass */
 #messages {
   display: none;

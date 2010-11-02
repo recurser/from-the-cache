@@ -8,6 +8,7 @@ app: {
     $("#messages").slideDown('slow').fadeTo(3000, 1).slideUp('slow');
     
   init_search: ->
+    $('input#search_field').placeholder()
     $('form#search_form').submit app.handle_search
     
   init_search_result: ->

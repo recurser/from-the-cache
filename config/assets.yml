@@ -3,6 +3,7 @@ embed_assets: off
 javascripts:
   common:
     - public/javascripts/jquery.js
+    - public/javascripts/jquery.placeholder.js
     - public/javascripts/rails.js
     - public/javascripts/application.js
 

@@ -224,3 +224,8 @@ hr {
   padding: 12px;
   width: 90%;
 }
+
+/* line 71, ../../../app/stylesheets/common/base.sass */
+.placeholder {
+  color: #a9a9b3;
+}
