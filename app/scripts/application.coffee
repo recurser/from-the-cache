@@ -41,7 +41,7 @@ app: {
       tag.css 'font-family',      'helvetica neue, arial, sans-serif !important'
       link.css 'color',           '#fff !important'
       link.css 'text-decoration', 'none !important'
-      link.css 'font-size',       '9px !important'
+      link.css 'font-size',       '10px !important'
       link.css 'font-weight',     'normal !important'
       link.css 'display',         'block !important'
       link.css 'margin',          '0 auto !important'
