@@ -751,6 +751,17 @@ body#pages_about #what_for_container {
   width: 460px;
 }
 
+/* line 7, ../../app/stylesheets/pages/error.sass */
+body#pages_search #error_container {
+  position: relative;
+  left: 240px;
+  display: inline;
+  float: left;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 460px;
+}
+
 /* line 7, ../../app/stylesheets/pages/search.sass */
 body#pages_search #search_container {
   position: relative;
@@ -760,7 +771,7 @@ body#pages_search #search_container {
   margin-left: 10px;
   margin-right: 10px;
   width: 620px;
-  margin: 100px 0;
+  margin: 100px 0 0 0;
 }
 /* line 15, ../../app/stylesheets/pages/search.sass */
 body#pages_search #search_container form #search_field {

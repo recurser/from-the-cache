@@ -24,7 +24,7 @@ en:
     new:
       title:                          "Contact Us"
       heading:                        "Contact Us"
-      contact_us_explanation:         "If you have any suggestions or feedback, please drop us a line and let us know!"
+      contact_us_explanation:         "If you have any suggestions, complaints or feedback, please drop me a line and let me know!"
     flash:
       message_sent:                   "Your message has been sent."
       invalid_form_warning:           "There was a problem sending your message."
@@ -43,6 +43,12 @@ en:
       invalid_url_warning:            "Please enter a valid url"
     about:
       title:                          "About"
+    error:
+      title:                          "Error"
+      heading:                        "Sorry, no luck!"
+      no_results_explanation:         "We couldn't find any results (cached or otherwise) for <em>%{url}</em>."
+      reason_explanation:             "Either the site doesn’t exist, or it is down and absent from google's cache."
+        
     
     
   

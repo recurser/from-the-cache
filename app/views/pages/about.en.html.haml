@@ -1,20 +1,17 @@
 
 #what_for_container
+
   %h1 
     What is this anyway?
     
   %p
-    I've been writing scraping some sites recently for a side-project involving word-frequencies,
-    and <b>found myself getting blocked</b> by the site (I was obeying <em>robots.txt</em> and throttling
-    my requests pretty heavily).
-    
-  %p
-    It occurred to me that I could save the target site bandwidth, and probably speed up the scrape
-    process, if I <b>checked the google cache first</b>, and only scraped the site itself as a last resort.
+    I've been scraping some sites recently for a side-project, and it occurred to me that I could save the 
+    target site bandwidth (and probably speed up the scrape process) if I <b>check the google cache first</b>, 
+    and only scrape the site itself as a last resort.
     
   %p
     Thus was <a href="http://fromthecache.com/">fromthecache.com</a> born. When you enter a URL,
-    it will return the cached version from google if available, or otherwise it will scrape the original 
+    it will return the cached version from google if available; if not, it will scrape the original 
     site.
     
   %p
@@ -22,9 +19,9 @@
     in front of the URL and you have an instant cache link.
     
   %p
-    I'm not sure about the legalities of removing the google cache header text (i do link to the google cache 
+    I'm not sure about the legalities of removing the google cache header text (I do link to the google cache 
     result though), and I have a suspicion the site may end up blocked from google anyway for looking
-    like a bot, but in the meantime <b>we're rock'n'rolling!</b>
+    like a bot, but in the meantime <b>we're open for business</b>.
     
   %p
     Feel free to call the service programmatically if you wish, and basically do whatever you want with it.

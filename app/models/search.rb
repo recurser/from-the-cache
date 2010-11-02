@@ -51,7 +51,9 @@ class Search
     unless content
       content = scrape_url(processed_url)
       source  = escaped_url
-      (content/"html").prepend(base_href)
+      if content
+        (content/"html").prepend(base_href)
+      end
     end
     
     # Return false if we still couldn't retrieve anything.
@@ -80,15 +82,30 @@ class Search
   # Scrape the given URL and return the content.
   def scrape_url(url)
     Rails.logger.debug "Fetching #{url}"
-    content = Hpricot(open(url,
-      "User-Agent" => "fromthecache.com scraper",
-      "From"       => "mail@fromthecache.com")
-    )
-    content
     
-    # Check if we've hit the google cache 404 page.
-    if content.inner_text =~ / - did not match any documents\./
+    # Set up a timeout for the scrape request.
+    require 'timeout'
+    begin
+      Timeout::timeout(APP_CONFIG['scrape_timeout']) {
+        content = Hpricot(open(url,
+          "User-Agent" => "fromthecache.com scraper",
+          "From"       => "mail@fromthecache.com")
+        )
+      }
+    rescue Timeout::Error
+      Rails.logger.debug "Request timed out."
       content = nil
+    end
+    
+    # Check if we've hit the google cache 404 or search pages.
+    if content 
+      if content.inner_text =~ / - did not match any documents\./
+        # This happens if the page is not in the cache.
+        return nil
+      elsif (content/"title").inner_text =~ /^cache:http.*Google Search$/
+        # This happens for searches that aren't a real domain - eg. http://asdf.ert/.
+        return nil
+      end
     end
     
     content
@@ -98,3 +115,4 @@ class Search
   end
   
 end
+
