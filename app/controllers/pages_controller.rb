@@ -13,22 +13,22 @@ class PagesController < ApplicationController
     end
     
     if params[:url]
-      search     = Search.new
-      search.url = params[:url]
+      @search     = Search.new
+      @search.url = params[:url]
     
       # Redirect minus-the-http if present
-      if search.url =~ /^http:\/\//
-        url = search.url.sub /^http:\/\//, ''
+      if @search.url =~ /^http:\/\//
+        url = @search.url.sub /^http:\/\//, ''
         redirect_to "http://#{get_domain}/#{url}"
         return
       end    
     
-      unless search.valid?
+      unless @search.valid?
         flash[:alert] = t 'pages.search.invalid_url_warning'
         return
       end
       
-      result = search.result
+      result = @search.result
       
       unless result
         render_404 and return
