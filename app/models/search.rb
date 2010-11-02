@@ -66,7 +66,7 @@ class Search
     
     # Return false if we still couldn't retrieve anything.
     unless content
-      Rails.cache.write(processed_url, '__nil__')
+      Rails.cache.write(processed_url, '__nil__', :expires_in => 30.minutes)
       return false
     end
     
@@ -85,7 +85,7 @@ class Search
     
     # Store this in the cache for subsequent requests.
     result = content.inner_html
-    Rails.cache.write(processed_url, result)
+    Rails.cache.write(processed_url, result, :expires_in => 30.minutes)
     result
   end
   
