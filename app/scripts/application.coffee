@@ -19,33 +19,22 @@ app: {
         link_text = 'the original'
         
       # Position and style the tag.
-      tag = $('<div>From <a id="source_link" href="'+scrape_source+'">'+link_text+'</a><a id="home_link" href="http://fromthecache.com/">fromthecache.com</a></div>')
-      tag.css 'font-family',      'helvetica neue, arial, sans-serif !important'
-      tag.css 'position',         'absolute !important'
-      tag.css 'top',              '5px !important'
-      tag.css 'right',            '5px !important'
-      tag.css 'background-color', '#AA0101 !important'
-      tag.css 'color',            '#fff !important'
-      tag.css 'padding',          '5px !important'
-      tag.css 'font-size',        '16px !important'
-      tag.css 'font-weight',      'bold !important'
-      
+      tag = $('<div>from <a id="source_link" href="'+scrape_source+'">'+link_text+'</a></div>')
+      tag.css 'font-family',      'helvetica neue, arial, sans-serif'
+      tag.css 'position',         'absolute'
+      tag.css 'top',              '5px'
+      tag.css 'right',            '5px'
+      tag.css 'background-color', '#AA0101'
+      tag.css 'color',            '#fff'
+      tag.css 'padding',          '5px'
+      tag.css 'font-size',        '16px'
+      tag.css 'font-weight',      'bold'
       link = tag.find 'a#source_link'
-      tag.css 'font-family',      'helvetica neue, arial, sans-serif !important'
-      link.css 'color',           '#fff !important'
-      link.css 'text-decoration', 'underline !important'
-      link.css 'font-size',       '16px !important'
-      link.css 'font-weight',     'bold !important'
-      
-      link = tag.find 'a#home_link'
-      tag.css 'font-family',      'helvetica neue, arial, sans-serif !important'
-      link.css 'color',           '#fff !important'
-      link.css 'text-decoration', 'none !important'
-      link.css 'font-size',       '10px !important'
-      link.css 'font-weight',     'normal !important'
-      link.css 'display',         'block !important'
-      link.css 'margin',          '0 auto !important'
-      link.css 'text-align',      'center !important'
+      link.css 'font-family',     'helvetica neue, arial, sans-serif'
+      link.css 'color',           '#fff'
+      link.css 'text-decoration', 'underline'
+      link.css 'font-size',       '16px'
+      link.css 'font-weight',     'bold'
       $('body').append tag
     
   handle_search: ->

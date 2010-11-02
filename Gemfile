@@ -1,6 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'cancan',               '1.3.4'
+gem 'dalli',                '0.10.1'
 gem 'devise',               '1.1.3'
 gem 'formtastic',           '1.1.0'
 gem 'haml',                 '3.0.18'

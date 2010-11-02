@@ -27,8 +27,16 @@ class Search
       processed_url = 'http://' + processed_url
     end
     
-    # Extract the domain.
-    domain = URI.parse(processed_url).host
+    # Check the cache for this URL.
+    cached = Rails.cache.read(processed_url)
+    if cached
+      Rails.logger.debug "Retrieved from cache : #{processed_url}"
+      if cached == '__nil__'
+        return nil
+      else
+        return cached
+      end
+    end
     
     # URL-encode the url
     escaped_url = CGI::escape(processed_url)
@@ -58,6 +66,7 @@ class Search
     
     # Return false if we still couldn't retrieve anything.
     unless content
+      Rails.cache.write(processed_url, '__nil__')
       return false
     end
     
@@ -74,7 +83,10 @@ class Search
     hidden_tag = "<input type='hidden' id='scrape_source' value='#{source}'>"
     (content/"body").append(hidden_tag)
     
-    content
+    # Store this in the cache for subsequent requests.
+    result = content.inner_html
+    Rails.cache.write(processed_url, result)
+    result
   end
   
   private
