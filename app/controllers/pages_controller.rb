@@ -34,7 +34,7 @@ class PagesController < ApplicationController
         render_404 and return
       end
       
-      render :text => result
+      render :text => result[:content], :content_type => result[:content_type]
     end   
   end
   

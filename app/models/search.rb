@@ -1,4 +1,9 @@
 # Models a search for a particular URL.
+
+require 'hpricot'
+require 'open-uri'
+require 'timeout'
+    
 class Search
   
   include ActiveModel::Validations
@@ -17,9 +22,6 @@ class Search
   
   # Process the URL, and try to get the result from the cache.
   def result
-    require 'hpricot'
-    require 'open-uri'
-    
     processed_url = @url
     
     # Prepend HTTP if it's not there already.
@@ -46,26 +48,26 @@ class Search
     
     # Get the page from google cache.
     cache_url = "http://webcache.googleusercontent.com/search?q=cache:#{escaped_url}"
-    content = scrape_url(cache_url)
+    result = scrape_url(cache_url)
     
     # If success, remove the google cache header.
-    if content
-      content = content/"html"
+    if result
+      result[:content] = result[:content]/"html"
       source  = CGI::escape(cache_url)
-      (content).prepend(base_href)
+      (result[:content]).prepend(base_href)
     end
     
     # If the google cache call failed, try to get the original URL.
-    unless content
-      content = scrape_url(processed_url)
+    unless result
+      result = scrape_url(processed_url)
       source  = escaped_url
-      if content
-        (content/"html").prepend(base_href)
+      if result[:content]
+        (result[:content]/"html").prepend(base_href)
       end
     end
     
     # Return false if we still couldn't retrieve anything.
-    unless content
+    unless result
       Rails.cache.write(processed_url, '__nil__', :expires_in => 30.minutes)
       return false
     end
@@ -77,14 +79,14 @@ class Search
     else
       script_tag = '<script src="http://fromthecache.com/assets/common.js"></script>'
     end
-    (content/"body").append(script_tag)
+    (result[:content]/"body").append(script_tag)
     
     # Add a hidden field so we know the source of the page.
     hidden_tag = "<input type='hidden' id='scrape_source' value='#{source}'>"
-    (content/"body").append(hidden_tag)
+    (result[:content]/"body").append(hidden_tag)
     
     # Store this in the cache for subsequent requests.
-    result = content.inner_html
+    result[:content] = result[:content].inner_html
     Rails.cache.write(processed_url, result, :expires_in => 30.minutes)
     result
   end
@@ -94,16 +96,17 @@ class Search
   # Scrape the given URL and return the content.
   def scrape_url(url)
     Rails.logger.debug "Fetching #{url}"
+    content      = nil
+    content_type = 'text/html'
     
     # Set up a timeout for the scrape request.
-    require 'timeout'
-    content = nil
     begin
       Timeout::timeout(APP_CONFIG['scrape_timeout']) {
-        content = Hpricot(open(url,
+        conn = open(url,
           "User-Agent" => "fromthecache.com scraper",
           "From"       => "mail@fromthecache.com")
-        )
+        content_type = conn.content_type
+        content = Hpricot(conn)
       }
     rescue Timeout::Error
       Rails.logger.debug "Request timed out."
@@ -121,10 +124,10 @@ class Search
       end
     end
     
-    content
-  #rescue
-  #  Rails.logger.info "Couldn't load URL #{url}"
-  #  nil
+    {:content => content, :content_type => content_type}
+  rescue
+    Rails.logger.info "Couldn't load URL #{url}"
+    nil
   end
   
 end
