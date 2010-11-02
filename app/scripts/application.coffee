@@ -36,7 +36,7 @@ app: {
       link = tag.find 'a#home_link'
       link.css 'color',           '#fff'
       link.css 'text-decoration', 'none'
-      link.css 'font-size',       '8px'
+      link.css 'font-size',       '9px'
       link.css 'font-weight',     'normal'
       link.css 'display',         'block'
       link.css 'margin',          '0 auto'
