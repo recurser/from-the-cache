@@ -20,6 +20,7 @@ app: {
         
       # Position and style the tag.
       tag = $('<div>From <a id="source_link" href="'+scrape_source+'">'+link_text+'</a><a id="home_link" href="http://fromthecache.com/">fromthecache.com</a></div>')
+      tag.css 'font-family',      'helvetica neue, arial, sans-serif'
       tag.css 'position',         'absolute'
       tag.css 'top',              '5px'
       tag.css 'right',            '5px'
@@ -28,12 +29,16 @@ app: {
       tag.css 'padding',          '5px'
       tag.css 'font-size',        '16px'
       tag.css 'font-weight',      'bold'
+      
       link = tag.find 'a#source_link'
+      tag.css 'font-family',      'helvetica neue, arial, sans-serif'
       link.css 'color',           '#fff'
       link.css 'text-decoration', 'underline'
       link.css 'font-size',       '16px'
       link.css 'font-weight',     'bold'
+      
       link = tag.find 'a#home_link'
+      tag.css 'font-family',      'helvetica neue, arial, sans-serif'
       link.css 'color',           '#fff'
       link.css 'text-decoration', 'none'
       link.css 'font-size',       '9px'
