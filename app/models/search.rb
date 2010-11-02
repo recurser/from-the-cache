@@ -85,6 +85,7 @@ class Search
     
     # Set up a timeout for the scrape request.
     require 'timeout'
+    content = nil
     begin
       Timeout::timeout(APP_CONFIG['scrape_timeout']) {
         content = Hpricot(open(url,
@@ -94,7 +95,7 @@ class Search
       }
     rescue Timeout::Error
       Rails.logger.debug "Request timed out."
-      content = nil
+      return nil
     end
     
     # Check if we've hit the google cache 404 or search pages.
@@ -109,9 +110,9 @@ class Search
     end
     
     content
-  rescue
-    Rails.logger.info "Couldn't load URL #{url}"
-    nil
+  #rescue
+  #  Rails.logger.info "Couldn't load URL #{url}"
+  #  nil
   end
   
 end
