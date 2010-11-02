@@ -22,8 +22,8 @@ en:
     
   contacts:
     new:
-      title:                          "Contact Us"
-      heading:                        "Contact Us"
+      title:                          "Contact"
+      heading:                        "Contact"
       contact_us_explanation:         "If you have any suggestions, complaints or feedback, please drop me a line and let me know!"
     flash:
       message_sent:                   "Your message has been sent."
