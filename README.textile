@@ -1,11 +1,11 @@
 
 h2. About
 
-I've been scraping some sites recently for a side-project, and it occurred to me that I could save the target site bandwidth (and probably speed up the scrape process) if I check the google cache first, and only scrape the site itself as a last resort.
+I've been scraping some sites recently for a side-project, and it occurred to me that I could save the target site bandwidth (and probably speed up the scrape process) if I *check the google cache first*, and only scrape the site itself as a last resort.
 
-Thus was fromthecache.com born. When you enter a URL, it will return the cached version from google if available; if not, it will scrape the original site.
+Thus was "fromthecache.com":http://fromthecache.com/ born. When you enter a URL, it will return the cached version from google if available; if not, it will scrape the original site. It stores the resulting page in memcached for 30 minutes, so popular requests return instantly.
 
-Another use is an easy way to post mirror links when a site goes down - simply put fromthecache.com/ in front of the URL and you have an instant cache link.
+Another use is an easy way to post mirror links when a site goes down - simply put _fromthecache.com/_ in front of the URL and you have an instant cache link.
 
 h2. Demo Site
 
