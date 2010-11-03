@@ -11,19 +11,19 @@ describe Search do
 
   it 'should fix URLs with a single forward-slash' do
     search     = Search.new
-    search.url = 'http:/google.com'
-    search.url.should == 'http://google.com'
+    search.url = 'http:/www.wikipedia.org'
+    search.url.should == 'http://www.wikipedia.org'
   end
 
   it 'should handle URLs without a http prefix' do
     search     = Search.new
-    search.url = 'google.com'
-    search.result[:content].should include('<title>Google</title>')
+    search.url = 'www.wikipedia.org'
+    search.result[:content].should include('<title>Wikipedia</title>')
   end
 
   it 'should cache search results' do
     search     = Search.new
-    search.url = 'http://google.com'
+    search.url = 'http://www.wikipedia.org'
     search.result[:content].should == Rails.cache.read(search.url)[:content]
   end
 
@@ -50,13 +50,13 @@ describe Search do
 
   it 'should add a <base> tag' do
     search     = Search.new
-    search.url = 'http://google.com'
+    search.url = 'http://www.wikipedia.org'
     search.result[:content].should include( "<base href=\"#{search.url}\" />")
   end
 
   it 'should remove google cache headers' do
     search     = Search.new
-    search.url = 'http://google.com'
+    search.url = 'http://www.wikipedia.org'
     # TODO
   end
 
@@ -69,7 +69,7 @@ describe Search do
 
   it 'should append a javascript tag' do
     search     = Search.new
-    search.url = 'http://google.com'
+    search.url = 'http://www.wikipedia.org'
     search.result[:content].should include('<script src="http://fromthecache.com/assets/common.js"></script>')
   end
 
