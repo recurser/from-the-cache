@@ -3,8 +3,8 @@
   %head
     %meta{"http-equiv"=>"Content-type", :content=>"text/html;charset=utf-8"}/
     %title= title
-    = render 'layouts/stylesheets'
-    = render 'layouts/javascript'
+    = render 'common/stylesheets'
+    = render 'common/javascript'
     = csrf_meta_tag 
 
   %body{:id => body_id}>
@@ -14,11 +14,11 @@
         - flash.each do |key, value|
           .flash{:class => "#{key}"}= value
       
-    = render 'layouts/header'
+    = render 'common/header'
     
     .content
         
       = yield
     
-      = render 'layouts/footer'
+      = render 'common/footer'
     

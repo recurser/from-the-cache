@@ -3,9 +3,11 @@
   %head
     %meta{"http-equiv"=>"Content-type", :content=>"text/html;charset=utf-8"}/
     %title= title
-    = render 'layouts/stylesheets'
-    = render 'layouts/javascript'
+    = render 'common/stylesheets'
+    = render 'common/javascript'
     = csrf_meta_tag 
+    = render 'common/analytics'
+    
 
   %body{:id => body_id}>
     
