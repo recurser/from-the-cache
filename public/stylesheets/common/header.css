@@ -50,12 +50,7 @@
 }
 
 /* line 44, ../../../app/stylesheets/common/header.sass */
-body#pages_home #menu_container li#home_tab a,
 body#pages_about #menu_container li#about_tab a,
-body#contacts_new #menu_container li#contact_tab a,
-body#users_index #menu_container li#users_tab a,
-body#registrations_edit #menu_container li#profile_tab a,
-body#sessions_new #menu_container li#sign_in_tab a,
-body#registrations_new #menu_container li#sign_up_tab a {
+body#contacts_new #menu_container li#contact_tab a {
   color: #222222;
 }

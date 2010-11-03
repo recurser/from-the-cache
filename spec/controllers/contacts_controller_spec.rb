@@ -2,8 +2,6 @@ require 'spec_helper'
 
 describe ContactsController do
   
-  include Devise::TestHelpers
-  
   render_views
 
   describe 'GET *new*' do

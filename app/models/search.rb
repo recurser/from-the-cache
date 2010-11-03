@@ -66,10 +66,10 @@ class Search
       end
     end
     
-    # Return false if we still couldn't retrieve anything.
+    # Return nil if we still couldn't retrieve anything.
     unless result
       Rails.cache.write(processed_url, '__nil__', :expires_in => 30.minutes)
-      return false
+      return nil
     end
     
     # Add custom javascript to rewrite relative links, CSS, JScript, images etc.
@@ -120,6 +120,9 @@ class Search
         return nil
       elsif (content/"title").inner_text =~ /^cache:http.*Google Search$/
         # This happens for searches that aren't a real domain - eg. http://asdf.ert/.
+        return nil
+      elsif content.inner_text =~ /it appears your computer is sending automated requests/
+        # This happens if we get blocked by google for looking like a bot.
         return nil
       end
     end

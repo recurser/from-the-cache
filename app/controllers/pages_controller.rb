@@ -19,7 +19,7 @@ class PagesController < ApplicationController
       # Redirect minus-the-http if present
       if @search.url =~ /^http:\/\//
         url = @search.url.sub /^http:\/\//, ''
-        redirect_to "http://#{get_domain}/#{url}"
+        redirect_to "/#{url}"
         return
       end    
     

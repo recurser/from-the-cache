@@ -1,8 +1,6 @@
 FromTheCache::Application.routes.draw do
 
     resources :contacts, :only => [:new, :create]
-    resources  :users
-    devise_for :users, :path => '/account'
 
     match '/contact', :to => 'contacts#new'
   
@@ -14,6 +12,6 @@ FromTheCache::Application.routes.draw do
     match '/javascripts/bundle/:bundle.js', :to => 'bistro_car/bundle#show'
     
     # Send any unknown controller/actions to the search page.
-    match '*dummy',     :to => 'pages#search'
+    match '*catch_all', :to => 'pages#search'
   
 end

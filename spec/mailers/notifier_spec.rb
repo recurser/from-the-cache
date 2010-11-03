@@ -9,7 +9,7 @@ describe Notifier do
 
       before(:all) do
         @attr = {
-          :email   => 'railskitchensink@recursive-design.com',
+          :email   => 'mail@recursive-design.com',
           :subject => 'Urgent Problem',
           :body    => 'Please reply ASAP!'
         }
@@ -38,7 +38,7 @@ describe Notifier do
       end
 
       after(:all) do
-        APP_CONFIG['contact_to_address'] = 'railskitchensink@recursive-design.com'
+        APP_CONFIG['contact_to_address'] = 'mail@recursive-design.com'
       end
     
       it 'should raise an exception' do

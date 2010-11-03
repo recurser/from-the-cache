@@ -14,9 +14,4 @@ module ApplicationHelper
     "#{controller_name}_#{action_name}"
   end
   
-  # Returns the current locale to the view.
-  def locale
-    I18n.locale.to_s
-  end
-  
 end

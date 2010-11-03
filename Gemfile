@@ -1,15 +1,12 @@
 source 'http://rubygems.org'
 
-gem 'cancan',               '1.3.4'
 gem 'dalli',                '0.10.1'
-gem 'devise',               '1.1.3'
 gem 'formtastic',           '1.1.0'
 gem 'haml',                 '3.0.18'
 gem 'hpricot',              '0.8.2'
 gem 'i18n',                 '0.4.1'
 gem 'sqlite3-ruby',         '1.2.5', :require => 'sqlite3'
 gem 'rails',                '3.0.0'
-gem 'will_paginate',        :git => 'http://github.com/mislav/will_paginate.git', :branch => 'rails3'
 
 group :development do
   gem 'annotate-models',    '1.0.4'

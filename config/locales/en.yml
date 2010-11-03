@@ -4,21 +4,12 @@ en:
     title_separator:                  " | "
     or:                               "or"
     header_link:
-        home:                         "Home"
+        search:                       "Home"
         about:                        "About"
         contact:                      "Contact"
-        users:                        "Users"
-        profile:                      "Profile"
-        sign_up:                      "Sign Up"
-        sign_in:                      "Sign In"
-        sign_out:                     "Sign Out"
-        english:                      "English"
-        french:                       "Français"
     footer_copyright_message:         "Copyright 2010"
     footer_copyright_link:            "Recursive Design"
     error_message_heading:            "Sorry, there was a problem!"
-    
-    
     
   contacts:
     new:
@@ -28,8 +19,6 @@ en:
     flash:
       message_sent:                   "Your message has been sent."
       invalid_form_warning:           "There was a problem sending your message."
-      
-      
     
   pages:
     search:
@@ -48,163 +37,20 @@ en:
       heading:                        "Sorry, no luck!"
       no_results_explanation:         "We couldn't find any results (cached or otherwise) for <em>%{url}</em>."
       reason_explanation:             "Either the site doesn’t exist, or it is down and absent from google's cache."
-        
-    
-    
   
   notifier:  
     contact_notification:
       heading:                        "You have received a new message."
       from_label:                     "From :"
       subject_label:                  "Subject :"
-      body_label:                     "Body :"
-      
-      
-    
-  users:
-    flash:
-      user_updated:                   "User %{email} has been updated."
-      user_deleted:                   "User %{email} has been deleted."
-      user_created:                   "User %{email} has been created."
-    index:
-      title:                          "Manage Users"
-      heading:                        "All Users"
-      create_user_link:               "Create a new user"
-      user_list:
-        email_heading:                "Email"
-        role_heading:                 "Roles"
-    edit:
-      title:                          "Edit User"
-      heading:                        "Editing %{email}"
-      delete_user_link:               "Delete this user"
-      all_users_link:                 "view all users"
-      delete_user_confirm_popup:      "Are you sure? Click the 'OK' button to delete this user."
-      password_hint:                  "(leave this blank if you don't want to change it)"
-    new:
-      title:                          "New User"
-      heading:                        "Create a new user"
-      cancel_link:                    "cancel"
-    show:
-      title:                          "View User"
-      heading:                        "Viewing %{email}"
-      edit_user_link:                 "Edit this user"
-      all_users_link:                 "view all users"
-      user_detail:
-        email_heading:                "Email"
-        role_heading:                 "Roles"
-        sign_in_count_heading:        "Sign-in count"
-        current_sign_in_at_heading:   "Current sign-in at"
-        last_sign_in_at_heading:      "Last sign-in at"
-        current_sign_in_ip_heading:   "Current IP address"
-        last_sign_in_ip_heading:      "Last IP address"
-        failed_attempts_heading:      "Failed attempts"
-        created_at_heading:           "Created"
-        updated_at_heading:           "Updated"
-        locked_at_heading:            "Locked"
-    _user:
-      edit_link:                      "edit"
-      delete_link:                    "delete"
-      delete_user_confirm_popup:  "Are you sure? Click the 'OK' button to delete this user."
-      
-      
-  
-  sessions:
-    new:
-      title: "Sign in"    
-  registrations:
-    new:
-      title: "Sign up"
-    edit:
-      title: "Edit your profile"
-  passwords:
-    new:
-      title: "Forgot your password?"
-    edit:
-      title: "Change your password"
-  unlocks:
-    new:
-      title: "Resend unlock instructions"
-      
-
-
-  devise:
-    confirmations:
-      new:
-        heading: "Resend confirmation instructions"
-    mailer:
-      confirmation_instructions:
-        welcome_message: "Hi %{email}!"
-        confirm_link_explanation: "Please click the link below to confirm your account:"
-        confirm_link: "Confirm your account"
-      reset_password_instructions:
-        welcome_message: "Hi %{email}!"
-        confirm_link_explanation: "Someone has requested a link to change your password. You you can do this through the link below:"
-        confirm_link: "Change your password"
-        ignore_mail_explanation: "If you didn't request a password reset, please ignore this email."
-        change_explanation: "Your password won't change until you click the link above and create a new one."
-      unlock_instructions:
-        welcome_message: "Hi %{email}!"
-        lock_explanation: "Your account has been locked due to an excessive amount of unsuccessful sign in attempts."
-        resend_link_explanation: "Click the link below to unlock your account:"
-        resend_link: "Unlock your account"
-    passwords:
-      new:
-        heading: "Forgot your password?"
-      edit:
-        heading: "Change your password"
-    registrations:
-      new:
-        heading: "Sign up"
-      edit:
-        heading: "Edit your profile"
-        cancel_account_heading: "Cancel your account"
-        cancel_account_description: "Unhappy with our service?"
-        cancel_account_link: "Cancel your account"
-        cancel_account_confirm_popup: "Are you sure? Click the 'OK' button to cancel your account."
-        password_hint: "(leave this blank if you don't want to change it)"
-    unlocks:
-      new:
-        heading: "Resend unlock instructions"
-    sessions:
-      new:
-        heading: "Sign in"
-    shared:
-      _links:
-        sign_in: "Sign in"
-        sign_up: "Sign up"
-        forgot_password: "Forgot your password?"
-        resend_confirm: "Didn't receive confirmation instructions?"
-        unlock: "Didn't receive unlock instructions?"
-        
-        
+      body_label:                     "Body :"        
 
   formtastic:
     labels:
-      user:
-        email: "Email"
-        password: "Password"
-        password_confirmation: "Confirm password"
-        current_password: "Current password"
-        remember_me: "Remember me"
-        roles: "Roles"
-        locked_at: "Locked"
       contact:
         email: "Email"
         subject: "Subject"
         body: "Body"
-    hints:
-      user:
-        edit:
-          current_password: "(we need your current password to confirm your changes)"
     actions:
-      sign_in: "Sign in"
-      sign_up: "Sign up"
-      reset_pass: "Reset my password"
-      resend_confirm: "Resend confirmation"
-      edit_user: "Update your profile"
-      change_password: "Change password"
-      resend_unlock: "Resend instructions"
       send_message: "Send message"
-      create_this_user: "Create this user"
-      update_this_user: "Update this user"
 

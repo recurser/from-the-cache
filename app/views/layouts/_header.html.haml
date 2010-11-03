@@ -2,15 +2,7 @@
   %nav
     #menu_container
       %ul#header_menu
-        %li#home_tab= link_to t('common.header_link.home'), root_path
+        %li#search_tab= link_to t('common.header_link.search'), root_path
         %li#about_tab= link_to t('common.header_link.about'), about_path
         %li#contact_tab= link_to t('common.header_link.contact'), contact_path
-        - if user_signed_in?
-          - if can?(:read, User)
-            %li#users_tab= link_to t('common.header_link.users'), users_path
-          %li#profile_tab= link_to t('common.header_link.profile'), edit_user_registration_path
-          %li#sign_out_tab= link_to t('common.header_link.sign_out'), destroy_user_session_path
-        //- else
-        //  %li#sign_in_tab= link_to t('common.header_link.sign_in'), new_user_session_path
-        //  %li#sign_up_tab= link_to t('common.header_link.sign_up'), new_user_registration_path
       
