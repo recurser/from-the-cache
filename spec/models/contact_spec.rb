@@ -4,7 +4,7 @@ describe Contact do
 
   before(:each) do
     @attr = {
-      :email   => 'railskitchensink@recursive-design.com',
+      :email   => 'mail@recursive-design.com',
       :subject => 'Urgent Problem',
       :body    => 'Please reply ASAP!'
     }

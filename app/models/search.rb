@@ -50,13 +50,14 @@ class Search
   
   # Write this result to the cache.
   def write_cache(result, url)
+    expiry = APP_CONFIG['cache_timeout_minutes'].to_i.minutes
     if result
       result[:content] = result[:content].inner_html
-      Rails.cache.write(url, result, :expires_in => 30.minutes)
+      Rails.cache.write(url, result, :expires_in => expiry)
       return result
     else
       # Return nil if we couldn't retrieve anything.
-      Rails.cache.write(url, '__nil__', :expires_in => 30.minutes)
+      Rails.cache.write(url, '__nil__', :expires_in => expiry)
       return nil
     end
   end
@@ -146,7 +147,7 @@ class Search
     content_type = 'text/html'
     
     # Set up a timeout for the scrape request.
-    Timeout::timeout(APP_CONFIG['scrape_timeout']) {
+    Timeout::timeout(APP_CONFIG['scrape_timeout_seconds'].to_i) {
       conn         = open(url, scraper_params)
       content_type = conn.content_type
       content      = Hpricot(conn)

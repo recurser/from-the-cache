@@ -1,6 +1,7 @@
 defaults: &defaults
   contact_to_address: mail@recursive-design.com
-  scrape_timeout: 4
+  scrape_timeout_seconds: 4
+  cache_timeout_minutes: 30
 
 development:
   <<: *defaults

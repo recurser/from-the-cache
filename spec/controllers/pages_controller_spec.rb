@@ -5,6 +5,7 @@ describe PagesController do
   render_views
 
   describe 'GET *search*' do
+    
     it 'should be successful' do
       get :search
       response.should be_success
@@ -19,10 +20,6 @@ describe PagesController do
       get :search, :url => 'http://google.com/'
       response.should redirect_to('/google.com/')
     end
-
-    #it 'should remove initial http from searches' do
-    #  { :get => '/google.com/' }.should route_to(:controller => 'pages', "catch_all"=>"google.com", :action => 'search') 
-    #end
 
     it 'should return an error for invalid domains' do
       get :search, :url => 'invalid'

@@ -1,6 +1,6 @@
 
 Factory.define :contact do |contact|
-  contact.email   "railskitchensink@recursive-design.com"
+  contact.email   "mail@recursive-design.com"
   contact.subject "Urgent Problem"
   contact.body    "Please reply ASAP!"
 end
