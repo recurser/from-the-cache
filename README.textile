@@ -181,7 +181,7 @@ h2. Bug Reports
 If you come across any problems, please "create a ticket":https://github.com/recurser/from-the-cache/issues and we'll try to get it fixed as soon as possible.
 
 
-h1. Contributing
+h2. Contributing
 
 Once you've made your commits:
 
@@ -192,12 +192,12 @@ Once you've made your commits:
 5. That's it!
 
 
-h1. Author
+h2. Author
 
 Dave Perrett :: mail@recursive-design.com :: @recurser
 
 
-h1. Copyright
+h2. Copyright
 
 Copyright (c) 2010 Dave Perrett. See "License":https://github.com/recurser/from-the-cache/blob/master/LICENSE for details.
 
