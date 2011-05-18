@@ -17,14 +17,14 @@ Feel free to call the service programmatically if you wish, and basically do wha
 
 h2. License
 
-This project is distributed under the "MIT License":http://en.wikipedia.org/wiki/MIT_license. See the "License.txt":http://recursive-design.com/code/p/from-the-cache/source/tree/master/LICENSE.txt file for details.
+This project is distributed under the "MIT License":http://en.wikipedia.org/wiki/MIT_license. See the "License":https://github.com/recurser/from-the-cache/blob/master/LICENSE file for details.
 
 h2. Installation
 
 To get started, first download the source via git
 
 {% highlight bash %}
-$ git clone git://recursive-design.com/from-the-cache.git
+$ git clone git://github.com/recurser/from-the-cache.git
 $ cd from-the-cache
 {% endhighlight %}
 
@@ -146,13 +146,14 @@ To achieve this, I added a post-commit hook to the repository to generate these 
 #!/bin/sh
 
 compass compile
-exec rake public/javascripts/application.js
+rake public/javascripts/application.js
 jammit
+
+git add public/assets/common*
+git add public/javascripts/application.js
 {% endhighlight %}
 
-The first two commands generate the CSS and Javascript respectively, and the 3rd command packages them up using Jammit. 
-
-The _jammit_ command doesn’t seem to be working 100% reliably in the pre-commit hook for reasons I don't currently understand - if your changes aren't reflected on Heroku you may have to run the _jammit_ command by hand and re-commit. I hope to fix this problem in the near future, and any suggestions would be appreciated.
+The first two commands generate the CSS and Javascript respectively, and the 3rd command packages them up using Jammit.
 
 h2. Stylesheets
 
@@ -177,4 +178,26 @@ JavaScript and CSS are automatically compressed and packaged for production with
 
 h2. Bug Reports
 
-If you come across any problems, please "create a ticket":http://recursive-design.com/code/p/from-the-cache/issues/ and we'll try to get it fixed as soon as possible.
+If you come across any problems, please "create a ticket":https://github.com/recurser/from-the-cache/issues and we'll try to get it fixed as soon as possible.
+
+
+h1. Contributing
+
+Once you've made your commits:
+
+1. "Fork":http://help.github.com/fork-a-repo/ from-the-cache
+2. Create a topic branch - `git checkout -b my_branch`
+3. Push to your branch - `git push origin my_branch`
+4. Create a "Pull Request":http://help.github.com/pull-requests/ from your branch
+5. That's it!
+
+
+h1. Author
+
+Dave Perrett :: mail@recursive-design.com :: @recurser
+
+
+h1. Copyright
+
+Copyright (c) 2010 Dave Perrett. See "License":https://github.com/recurser/from-the-cache/blob/master/LICENSE for details.
+
